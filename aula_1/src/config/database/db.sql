@@ -9,3 +9,6 @@ create table transacao (
     data_hora datetime not null,
     titulo varchar(255) not null
 );
+
+ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('');
+FLUSH PRIVILEGES;
