@@ -8,4 +8,6 @@ sudo service mariadb start
 sudo mysql_secure_instalattion
 sudo mysql -u root -p
 
+service --status-all
+
 npm init -y
