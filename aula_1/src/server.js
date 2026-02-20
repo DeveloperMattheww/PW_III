@@ -1,6 +1,9 @@
 import Fastify from 'fastify';
+import { transactionRoutes } from './routes/transaction.routes.js';
 
 const fastify = Fastify();
+
+fastify.register(transactionRoutes, { prefix: "/transactions" });
 
 fastify.get('/', async (request, reply) => {
   return {
@@ -13,11 +16,11 @@ fastify.get('/health', async (request, reply) => {
     }
 });
 
-fastify.listen({port: 3333}, (err) => {
+fastify.listen({port: 3335}, (err) => {
   if (err) {
     console.error(err);
     process.exit(1);
   }
-  console.log('Server is running on http://localhost:3333');
+  console.log('Server is running on http://localhost:3335');
 });
 
