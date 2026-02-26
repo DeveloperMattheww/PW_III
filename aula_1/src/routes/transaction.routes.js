@@ -8,9 +8,9 @@ import { listTransactionsController } from "../controllers/list-transaction.cont
 
 async function transactionRoutes(fastify) {
 
-    fastify.post('/', createTransactionController);
+    fastify.post('/create', createTransactionController);
 
-    fastify.get('/', listTransactionsController);
+    fastify.get('/list', listTransactionsController);
 }
 
 export { transactionRoutes };
