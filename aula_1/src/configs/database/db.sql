@@ -12,3 +12,5 @@ create table transacao (
 
 ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('');
 FLUSH PRIVILEGES;
+
+select id as 'ID', valor as 'Valor', tipo as 'Tipo', data_hora as 'Data e Hora', titulo as 'Título' from transacao;

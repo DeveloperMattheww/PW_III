@@ -10,4 +10,4 @@ const database = knex({
   },
 });
 
-export default database;
+export { database };

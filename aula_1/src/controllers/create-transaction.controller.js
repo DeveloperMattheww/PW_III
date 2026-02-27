@@ -8,6 +8,7 @@ import { createTransactionService } from '../services/create-transaction.service
 async function createTransactionController(request, reply) {
     const data = request.body;
     await createTransactionService(data);
+    
     return reply.status(201).send({
         message: 'Transaction created successfully'
     });
