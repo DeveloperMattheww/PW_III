@@ -6,12 +6,17 @@ import { createTransactionService } from '../services/create-transaction.service
  */
 
 async function createTransactionController(request, reply) {
-    const data = request.body;
-    await createTransactionService(data);
-    
-    return reply.status(201).send({
-        message: 'Transaction created successfully'
-    });
+    try {
+        const data = request.body;
+        const result = await createTransactionService(data);
+        if (result) {
+            return reply.status(201).send({ "message": "Transaction created successfully" });
+        }
+        return reply.status(400).send({ "message": "Validation error - Verify the data sent" });
+    } catch (error) {
+        console.error(error);
+        return reply.status(500).send({ "message": "Internal server error" });
+    }
 }
 
 export { createTransactionController };

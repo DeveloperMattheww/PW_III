@@ -8,10 +8,16 @@ class transactionRepository {
         await database.raw(query, [value, type, title]);
     }
 
-    static async list(data) {
+    static async list() {
         const query = "select id as 'ID', valor as 'Valor', tipo as 'Tipo', data_hora as 'Data e Hora', titulo as 'Título' from transacao";
-        const [transactions] = await database.raw(query);
-        return transactions;
+        const transactions = await database.raw(query);
+        return transactions[0];
+
+    }
+
+    static async delete(id) {
+        const query = "DELETE FROM transacao WHERE id = ?";
+        await database.raw(query, [id]);
     }
 }
 
