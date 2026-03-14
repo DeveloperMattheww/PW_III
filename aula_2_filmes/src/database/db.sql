@@ -1,6 +1,6 @@
-create database if not exists catalog_movies;
+create database if not exists movies_api;
 
-use catalog_movies;
+use movies_api;
 
 create table movie (
     id int auto_increment primary key,
@@ -44,3 +44,7 @@ anos'),
 'Livre');
 
 select * from movie;
+
+create user 'movies_api_user'@'localhost' identified by 'password123';
+grant all privileges on movies_api.* to 'movies_api_user'@'localhost';
+flush privileges;
