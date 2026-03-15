@@ -48,3 +48,5 @@ select * from movie;
 create user 'movies_api_user'@'localhost' identified by 'password123';
 grant all privileges on movies_api.* to 'movies_api_user'@'localhost';
 flush privileges;
+
+-- Para acessar o banco de dados usando o usuário criado:

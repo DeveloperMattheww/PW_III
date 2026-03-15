@@ -11,3 +11,5 @@ sudo mysql -u root -p
 service --status-all
 
 npm init -y
+
+Novo Commit Testado
